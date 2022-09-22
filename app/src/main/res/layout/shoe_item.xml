@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--    added "layout" tag to apply data binding-->
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <data>
+
+        <import type="com.hfad.shoestore.converter.IntConverter"/>
+        <variable
+            name="shoe"
+            type="com.hfad.shoestore.classes.Shoe" />
+    </data>
+
+<!--    Used linear layout because
+the card just contains textViews arranged vertically-->
+    <LinearLayout
+        android:id="@+id/shoeItemCard"
+        style="@style/CardStyle"
+        android:background="@drawable/shoe_item_card"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/itemName"
+            style="@style/CardItemStyle"
+            android:text="@={shoe.shoeName}">
+        </TextView>
+
+        <TextView
+            android:id="@+id/itemCompany"
+            style="@style/CardItemStyle"
+            android:text="@={shoe.shoeCompany}">
+        </TextView>
+
+        <TextView
+            android:id="@+id/itemSize"
+            style="@style/CardItemStyle"
+            android:text="@={IntConverter.intToString(shoe.shoeSize)}">
+        </TextView>
+
+        <TextView
+            android:id="@+id/itemDescription"
+            style="@style/CardItemStyle"
+            android:text="@={shoe.shoeDescription}">
+        </TextView>
+
+    </LinearLayout>
+</layout>

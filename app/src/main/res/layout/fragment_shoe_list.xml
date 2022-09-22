@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--    added "layout" tag to apply data binding-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.ShoeListFragment">
+
+
+<!--    used constraint layout because this layout is a little bit complex-->
+<!--    the constraint layout will help us adjust the right positions for views-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/LayoutStyle">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+<!--        it just contains cards arranged vertically-->
+        <LinearLayout
+            android:id="@+id/listOfShoes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        </LinearLayout>
+    </ScrollView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/add_icon"
+            android:layout_gravity="end|bottom"
+            android:contentDescription="@string/add_new_shoe"
+            android:backgroundTint="@color/black"
+            android:layout_margin="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
