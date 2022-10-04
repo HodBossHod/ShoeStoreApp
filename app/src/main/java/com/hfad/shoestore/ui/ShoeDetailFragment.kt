@@ -19,7 +19,7 @@ class ShoeDetailFragment : Fragment() {
 
     private lateinit var shoeDetailFragmentBinding:FragmentShoeDetailBinding
     private val shoeViewModel: ShoeViewModel by activityViewModels()
-
+    val shoe=Shoe()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -33,10 +33,12 @@ class ShoeDetailFragment : Fragment() {
         }
 
 
+
+
+        shoeDetailFragmentBinding.shoe=shoe
         shoeDetailFragmentBinding.saveBtn.setOnClickListener{
-            if(shoeDetailFragmentBinding.editName.text ==null || shoeDetailFragmentBinding.editCompany.text==null
-                || shoeDetailFragmentBinding.editSize.text ==null ||
-                shoeDetailFragmentBinding.editDescription.text ==null){
+            if(shoeDetailFragmentBinding.shoe!!.shoeName==null||shoeDetailFragmentBinding.shoe!!.shoeCompany==null||
+                shoeDetailFragmentBinding.shoe!!.shoeSize==null||shoeDetailFragmentBinding.shoe!!.shoeDescription==null){
                 Toast.makeText(context,"Please fill all shoes details",Toast.LENGTH_LONG).show()
             }else {
                 addShoeFromInput()
@@ -48,13 +50,7 @@ class ShoeDetailFragment : Fragment() {
     }
 
     private fun addShoeFromInput(){
-        val name=shoeDetailFragmentBinding.editName.text.toString()
-        val company=shoeDetailFragmentBinding.editCompany.text.toString()
-        val size=shoeDetailFragmentBinding.editSize.text.toString()
-        val description=shoeDetailFragmentBinding.editDescription.text.toString()
-
-        val newShoe= Shoe(name,company, IntConverter.stringToInt(size),description)
-        shoeViewModel.addShoe(newShoe)
+        shoeViewModel.addShoe(shoeDetailFragmentBinding.shoe!!)
     }
 
 

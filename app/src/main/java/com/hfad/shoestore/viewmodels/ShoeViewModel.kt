@@ -7,6 +7,8 @@ import com.hfad.shoestore.classes.Shoe
 
 class ShoeViewModel:ViewModel() {
 
+
+
     private val _shoeList=MutableLiveData<MutableList<Shoe>>()
     val shoeList:LiveData<MutableList<Shoe>>
     get() = _shoeList

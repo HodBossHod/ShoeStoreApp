@@ -26,13 +26,8 @@
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/floatingActionButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/add_icon"
-            android:layout_gravity="end|bottom"
+            style="@style/FloatingButtonStyle"
             android:contentDescription="@string/add_new_shoe"
-            android:backgroundTint="@color/black"
-            android:layout_margin="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 

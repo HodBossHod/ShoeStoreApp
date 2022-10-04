@@ -22,9 +22,10 @@
 
         <ImageView
             android:id="@+id/shoeIcon"
+            style="@style/ImageStyle"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:contentDescription="@string/logo_description"
+            android:layout_margin="0dp"
             android:src="@drawable/shoe_skate_logo">
 
         </ImageView>
